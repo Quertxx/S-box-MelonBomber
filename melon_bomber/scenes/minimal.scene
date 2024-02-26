@@ -5,6 +5,7 @@
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
         {
@@ -20,6 +21,7 @@
     {
       "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "Name": "2D Skybox",
+      "Tags": "skybox",
       "Enabled": true,
       "Components": [
         {
@@ -68,7 +70,7 @@
     {
       "Id": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
       "Name": "Cube",
-      "Position": "21.41682,74.1244,14.40159",
+      "Position": "-21.02746,139.3518,14.40163",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
@@ -96,6 +98,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -104,7 +107,7 @@
     {
       "Id": "523e3e8f-a4ec-4ec1-af9a-d86ffc9c17e1",
       "Name": "Cube (1)",
-      "Position": "40.81348,46.97572,14.40159",
+      "Position": "99.09787,172.402,14.40163",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
@@ -132,6 +135,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -140,7 +144,7 @@
     {
       "Id": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
       "Name": "Cube (2)",
-      "Position": "49.53707,34.08896,43.67614",
+      "Position": "91.19794,126.1568,43.67616",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
@@ -168,6 +172,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassOverride": 0,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -207,7 +212,8 @@
                 "t": 1,
                 "c": "1,1,1,1"
               }
-            ]
+            ],
+            "alpha": []
           },
           "BloomCurve": [
             {
@@ -235,6 +241,112 @@
           "Scale": 0.2
         }
       ]
+    },
+    {
+      "Id": "728fdf27-16d5-4ab9-9dc8-9892f7611c6d",
+      "Name": "playerController",
+      "Rotation": "0,0,0.0654026,0.9978589",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 71.2,
+          "IgnoreLayers": "",
+          "Radius": 21.6,
+          "StepHeight": 18
+        },
+        {
+          "__type": "CharacterScript",
+          "body": {
+            "_type": "gameobject",
+            "go": "aeca7afa-a9de-4160-a0a8-599820296734"
+          },
+          "head": {
+            "_type": "gameobject",
+            "go": "dd41cc64-3395-49b6-a918-40a3563694ca"
+          },
+          "speed": 100
+        },
+        {
+          "__type": "CitizenAnimationHelper",
+          "BodyWeight": 1,
+          "EyeSource": {
+            "_type": "gameobject",
+            "go": "dd41cc64-3395-49b6-a918-40a3563694ca"
+          },
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "IkLeftFoot": null,
+          "IkLeftHand": null,
+          "IkRightFoot": null,
+          "IkRightHand": null,
+          "LookAt": null,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "go": "aeca7afa-a9de-4160-a0a8-599820296734",
+            "component_type": "SkinnedModelRenderer"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "Id": "aeca7afa-a9de-4160-a0a8-599820296734",
+          "Name": "Body",
+          "Rotation": "0,0,0.06540259,0.9978589",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "AnimationGraph": null,
+              "BodyGroups": 341,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "dd41cc64-3395-49b6-a918-40a3563694ca",
+          "Name": "Head",
+          "Position": "61.70564,21.16069,-33.99077",
+          "Enabled": true
+        },
+        {
+          "Id": "d7eea0e1-9060-47a7-83fe-d048173f0cb9",
+          "Name": "Camera",
+          "Position": "-0.000009319107,0,215.1378",
+          "Rotation": "0,0.7071067,0,0.7071068",
+          "Tags": "maincamera",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 60,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -260,6 +372,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-08T13:32:32.3548959\u002B00:00",
+  "LastSaved": "2024-02-26T20:31:20.8524876\u002B00:00",
   "__references": []
 }
