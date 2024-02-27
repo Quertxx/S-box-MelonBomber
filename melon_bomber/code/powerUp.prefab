@@ -1,9 +1,9 @@
 {
   "RootObject": {
     "Id": "1f593039-1002-4873-a7da-af683f6bb465",
-    "Name": "powerUP",
-    "Position": "119.5858,-0.565918,40.29226",
+    "Name": "powerup",
     "Scale": "0.5,0.5,0.5",
+    "Networked": true,
     "Enabled": true,
     "Components": [
       {
@@ -27,7 +27,8 @@
         "__type": "PowerUP",
         "upgrade": "speed"
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

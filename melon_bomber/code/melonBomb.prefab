@@ -1,8 +1,9 @@
 {
   "RootObject": {
-    "Id": "fbd25dd0-d7c4-4497-b24f-63c5870ad5e9",
+    "Id": "8601452c-0786-4c10-a52d-fd79033d4e35",
     "Name": "melonbomb",
     "Scale": "0.5,0.5,0.5",
+    "Networked": true,
     "Enabled": true,
     "Components": [
       {

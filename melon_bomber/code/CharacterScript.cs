@@ -8,6 +8,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 
 	[Category("Stats")]
 	[Property]public float speed {get; set;} = 100;
+	[Property]public bool canMove {get;set;} = true;
 	private float defaultSpeed {get; set;} = 100;
 	[Category("Stats")]
 	[Property] public int bombs {get;set;} = 1;
@@ -28,11 +29,13 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	private Vector3 wishVelocity;
 	[Property]public int placedBombs {get;set;} = 0;
 	protected override void OnAwake()
+	
 	{
 		base.OnAwake();
 		characterCC = GameObject.Components.Get<CharacterController>();
 		animator = GameObject.Components.Get<CitizenAnimationHelper>();
 		model = body.Components.Get<ModelRenderer>();
+		
 	}
 	protected override void OnStart()
 	{
@@ -41,14 +44,19 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 		{
 			var clothing = ClothingContainer.CreateFromLocalUser();
 			clothing.Apply(model);
+			
 		}
 		speed = defaultSpeed;
 		power = defaultPower;
 		bombs = defaultBombs;
 		bomblength = bomblengthDefault;
+		
+		
 	}
 	protected override void OnUpdate()
 	{
+		if(IsProxy)
+		return;
 		if(characterCC.IsOnGround)
 		{
 			characterCC.Acceleration = 10f;
@@ -73,6 +81,8 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 			{
 				placedBombs++;
 				GameObject melonbomb = Melon.Clone(new Vector3(GameObject.Transform.Position.x, GameObject.Transform.Position.y, GameObject.Transform.Position.z + 30));
+				melonbomb.NetworkSpawn();
+				
 				melonbomb.Components.Get<MelonScript>().script = this;
 				melonbomb.Components.Get<MelonScript>().bombLength = bomblength;
 			}
@@ -82,11 +92,17 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	}
 	protected override void OnFixedUpdate()
 	{
+		if(IsProxy)
+		return;
 		base.OnFixedUpdate();
 		wishVelocity = Vector3.Zero;
 		wishVelocity = Input.AnalogMove.Normal * speed;
-		characterCC.Accelerate(wishVelocity);
-		characterCC.Move();
+		if(canMove)
+		{
+			characterCC.Accelerate(wishVelocity);
+			characterCC.Move();
+		}
+		
 		
 		rotate();
 	}

@@ -85,33 +85,7 @@ public sealed class MelonScript : Component
 				}
 				if(hitresult.GameObject.Tags.Has("wall"))
 				{
-					
-					Random r = new Random();
-					var randomIndex = r.Next(0, 6);
-					switch(randomIndex)
-					{
-						case 0:
-						GameObject power = powerUp.Clone(hitresult.GameObject.Transform.Position);
-						hitresult.GameObject.Destroy();
-						break;
-						case 1:
-						power = powerUp.Clone(hitresult.GameObject.Transform.Position);
-						hitresult.GameObject.Destroy();
-						break;
-						case 2:
-						power = powerUp.Clone(hitresult.GameObject.Transform.Position);
-						hitresult.GameObject.Destroy();
-						break;
-						case 3:
-						hitresult.GameObject.Destroy();
-						break;
-						case 4:
-						hitresult.GameObject.Destroy();
-						break;
-						case 5:
-						hitresult.GameObject.Destroy();
-						break;
-					}
+					destroyNetworkobjects(hitresult);
 				}
 				if(hitresult.GameObject.Tags.Has("player"))
 				{
@@ -129,6 +103,40 @@ public sealed class MelonScript : Component
 			}
 		}
 		
+	}
+
+	
+	private void destroyNetworkobjects(SceneTraceResult hitresult)
+	{
+		Random r = new Random();
+		var randomIndex = r.Next(0, 6);
+		switch(randomIndex)
+		{
+		case 0:
+		GameObject power = powerUp.Clone(hitresult.GameObject.Transform.Position);
+		power.NetworkSpawn();
+		hitresult.GameObject.Destroy();
+		break;
+		case 1:
+		power = powerUp.Clone(hitresult.GameObject.Transform.Position);
+		power.NetworkSpawn();
+		hitresult.GameObject.Destroy();
+		break;
+		case 2:
+		power = powerUp.Clone(hitresult.GameObject.Transform.Position);
+		power.NetworkSpawn();
+		hitresult.GameObject.Destroy();
+		break;
+		case 3:
+		hitresult.GameObject.Destroy();
+		break;
+		case 4:
+		hitresult.GameObject.Destroy();
+		break;
+		case 5:
+		hitresult.GameObject.Destroy();
+		break;
+		}
 	}
 
 }
