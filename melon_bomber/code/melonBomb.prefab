@@ -1,0 +1,39 @@
+{
+  "RootObject": {
+    "Id": "fbd25dd0-d7c4-4497-b24f-63c5870ad5e9",
+    "Name": "melonbomb",
+    "Scale": "0.5,0.5,0.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": "materials/dev/primary_green.vmat",
+        "Model": "models/dev/sphere.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 35,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "MelonScript",
+        "powerUp": {
+          "_type": "gameobject",
+          "prefab": "code/powerup.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}
