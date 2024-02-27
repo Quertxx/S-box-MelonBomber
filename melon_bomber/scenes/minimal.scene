@@ -338,7 +338,7 @@
     {
       "Id": "15139ecb-58d4-46fd-9b9a-8cf736a7e82f",
       "Name": "Camera",
-      "Position": "-67.85819,-275.4615,398.1443",
+      "Position": "-67.85812,-33.23303,398.1443",
       "Rotation": "0,0.7071068,0,0.7071068",
       "Tags": "maincamera",
       "Enabled": true,
@@ -385,6 +385,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-27T02:23:35.0974447\u002B00:00",
+  "LastSaved": "2024-02-27T03:18:42.5980696\u002B00:00",
   "__references": []
 }
