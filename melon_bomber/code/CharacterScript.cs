@@ -23,7 +23,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Category("Body")]
 	[Property]public GameObject body;
 	[Property]public GameObject head;
-	private CharacterController characterCC;
+	public CharacterController characterCC {get; private set;}
 	public CitizenAnimationHelper animator;
 	public SkinnedModelRenderer model;
 	private Vector3 wishVelocity;
@@ -97,9 +97,6 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 
 		protected override void OnFixedUpdate()
 	{
-		
-		base.OnFixedUpdate();
-		movement();
 		if(animator != null)
 		{
 			animator.WithVelocity(characterCC.Velocity);
@@ -107,6 +104,18 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 			//animator.WithLook(head.Transform.Rotation.Forward, 1f, 0.75f, 0.5f);
 			
 		}
+		base.OnFixedUpdate();
+		if(IsProxy)
+		return;
+		wishVelocity = Vector3.Zero;
+		wishVelocity = Input.AnalogMove.Normal * speed;
+		if(canMove)
+		{
+			characterCC.Accelerate(wishVelocity);
+			characterCC.Move();
+		}
+		rotate();
+
 	}
 
 	public void rotate()
@@ -125,16 +134,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 
 	public void movement()
 	{
-		if(IsProxy)
-		return;
-		wishVelocity = Vector3.Zero;
-		wishVelocity = Input.AnalogMove.Normal * speed;
-		if(canMove)
-		{
-			characterCC.Accelerate(wishVelocity);
-			characterCC.Move();
-		}
-		rotate();
+
 	}
 
 
