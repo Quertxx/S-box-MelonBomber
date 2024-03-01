@@ -24,7 +24,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Property]public GameObject body;
 	[Property]public GameObject head;
 	public CharacterController characterCC {get; private set;}
-	public CitizenAnimationHelper animator{get;set;}
+	[Property]public CitizenAnimationHelper animator{get;set;}
 	public List<CitizenAnimationHelper> ANIMATORS {get; private set;} = new();
 	public SkinnedModelRenderer model;
 	private Vector3 wishVelocity;
@@ -37,7 +37,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 		return;
 		base.OnAwake();
 		characterCC = GameObject.Components.Get<CharacterController>();
-		animator = GameObject.Components.Get<CitizenAnimationHelper>();
+		//animator = GameObject.Components.Get<CitizenAnimationHelper>();
 		model = body.Components.Get<SkinnedModelRenderer>();
 		ANIMATORS.Add(animator);
 		

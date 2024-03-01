@@ -47,6 +47,11 @@
           "_type": "gameobject",
           "go": "c053145a-c6d8-4492-8656-debe4bb67b3f"
         },
+        "animator": {
+          "_type": "component",
+          "go": "70443ea2-2d15-4937-aef7-c94d5b4fa778",
+          "component_type": "CitizenAnimationHelper"
+        },
         "bomblength": 50,
         "bombs": 1,
         "canMove": true,
