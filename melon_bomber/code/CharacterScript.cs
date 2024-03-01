@@ -24,22 +24,22 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Property]public GameObject body;
 	[Property]public GameObject head;
 	public CharacterController characterCC {get; private set;}
-	public CitizenAnimationHelper animator;
+	public CitizenAnimationHelper animator{get;set;}
+	public List<CitizenAnimationHelper> ANIMATORS {get; private set;} = new();
 	public SkinnedModelRenderer model;
 	private Vector3 wishVelocity;
 	//[Sync]private Vector3 playerVelocity;
 	
 	[Property]public int placedBombs {get;set;} = 0;
 	protected override void OnAwake()
-	
 	{
-		
 		if(IsProxy)
 		return;
 		base.OnAwake();
 		characterCC = GameObject.Components.Get<CharacterController>();
 		animator = GameObject.Components.Get<CitizenAnimationHelper>();
 		model = body.Components.Get<SkinnedModelRenderer>();
+		ANIMATORS.Add(animator);
 		
 	}
 	protected override void OnStart()
@@ -97,12 +97,17 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 
 		protected override void OnFixedUpdate()
 	{
-		if(animator != null)
+		/*if(animator != null)
 		{
 			animator.WithVelocity(characterCC.Velocity);
 			animator.WithWishVelocity(wishVelocity);
 			//animator.WithLook(head.Transform.Rotation.Forward, 1f, 0.75f, 0.5f);
 			
+		}*/
+		foreach(var animator in ANIMATORS)
+		{
+			animator.WithVelocity(characterCC.Velocity);
+			animator.WithWishVelocity(wishVelocity);
 		}
 		base.OnFixedUpdate();
 		if(IsProxy)
