@@ -27,10 +27,13 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	public CitizenAnimationHelper animator;
 	public SkinnedModelRenderer model;
 	private Vector3 wishVelocity;
+	//[Sync]private Vector3 playerVelocity;
+	
 	[Property]public int placedBombs {get;set;} = 0;
 	protected override void OnAwake()
 	
 	{
+		
 		if(IsProxy)
 		return;
 		base.OnAwake();
@@ -58,15 +61,10 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 		
 		
 	}
+
 	protected override void OnUpdate()
 	{
-		if(animator != null)
-		{
-			animator.WithVelocity(characterCC.Velocity);
-			animator.WithWishVelocity(wishVelocity);
-			//animator.WithLook(head.Transform.Rotation.Forward, 1f, 0.75f, 0.5f);
-			
-		}
+
 		if(IsProxy)
 		return;
 		if(characterCC.IsOnGround)
@@ -96,21 +94,19 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 		}
 		
 	}
-	protected override void OnFixedUpdate()
+
+		protected override void OnFixedUpdate()
 	{
-		if(IsProxy)
-		return;
+		
 		base.OnFixedUpdate();
-		wishVelocity = Vector3.Zero;
-		wishVelocity = Input.AnalogMove.Normal * speed;
-		if(canMove)
+		movement();
+		if(animator != null)
 		{
-			characterCC.Accelerate(wishVelocity);
-			characterCC.Move();
+			animator.WithVelocity(characterCC.Velocity);
+			animator.WithWishVelocity(wishVelocity);
+			//animator.WithLook(head.Transform.Rotation.Forward, 1f, 0.75f, 0.5f);
+			
 		}
-		
-		
-		rotate();
 	}
 
 	public void rotate()
@@ -120,12 +116,27 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 			var movementDir = new Vector3(Input.AnalogMove.x,Input.AnalogMove.y, 0);
 			movementDir = movementDir.Normal;
 			var newnewRot = Rotation.LookAt(movementDir.Normal, GameObject.Transform.Rotation.Up);
-			newnewRot = Rotation.Slerp(body.Transform.Rotation, newnewRot, 5f * Time.Delta);
-			body.Transform.Rotation = newnewRot;
+			newnewRot = Rotation.Slerp(GameObject.Transform.Rotation, newnewRot, 5f * Time.Delta);
+			GameObject.Transform.Rotation = newnewRot;
 		}
 		
 		
 	}
+
+	public void movement()
+	{
+		if(IsProxy)
+		return;
+		wishVelocity = Vector3.Zero;
+		wishVelocity = Input.AnalogMove.Normal * speed;
+		if(canMove)
+		{
+			characterCC.Accelerate(wishVelocity);
+			characterCC.Move();
+		}
+		rotate();
+	}
+
 
 	
 	public void OnCollisionStart(Collision other)

@@ -1,9 +1,8 @@
 {
   "RootObject": {
-    "Id": "768545eb-0bfd-4770-b87f-993a45d052d9",
+    "Id": "70443ea2-2d15-4937-aef7-c94d5b4fa778",
     "Name": "playercontroller",
     "Tags": "player",
-    "Networked": true,
     "Enabled": true,
     "Components": [
       {
@@ -21,7 +20,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "7435ec0e-b22a-4ee5-aabb-460e3f657e35"
+          "go": "c053145a-c6d8-4492-8656-debe4bb67b3f"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -34,7 +33,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "164570b8-2137-46b9-adc0-9474c7981379",
+          "go": "d37000de-3e13-4e50-9c90-1d907a14f5e5",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -42,11 +41,11 @@
         "__type": "CharacterScript",
         "body": {
           "_type": "gameobject",
-          "go": "164570b8-2137-46b9-adc0-9474c7981379"
+          "go": "d37000de-3e13-4e50-9c90-1d907a14f5e5"
         },
         "head": {
           "_type": "gameobject",
-          "go": "7435ec0e-b22a-4ee5-aabb-460e3f657e35"
+          "go": "c053145a-c6d8-4492-8656-debe4bb67b3f"
         },
         "bomblength": 50,
         "bombs": 1,
@@ -74,10 +73,9 @@
     ],
     "Children": [
       {
-        "Id": "164570b8-2137-46b9-adc0-9474c7981379",
+        "Id": "d37000de-3e13-4e50-9c90-1d907a14f5e5",
         "Name": "Body",
         "Rotation": "0,0,0.06540259,0.9978589",
-        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -95,14 +93,13 @@
         ]
       },
       {
-        "Id": "7435ec0e-b22a-4ee5-aabb-460e3f657e35",
+        "Id": "c053145a-c6d8-4492-8656-debe4bb67b3f",
         "Name": "Head",
         "Position": "61.70564,21.16069,-33.99077",
-        "Networked": true,
         "Enabled": true
       },
       {
-        "Id": "54c7292e-8f8a-4c13-af63-f4f92a9acad7",
+        "Id": "5ffa63a4-f71b-41c5-9d39-2ae05d44b464",
         "Name": "Screen",
         "Position": "13.38118,71.47127,5.069",
         "Enabled": true,
@@ -118,7 +115,7 @@
             "__type": "PlayerHUD",
             "player": {
               "_type": "gameobject",
-              "go": "768545eb-0bfd-4770-b87f-993a45d052d9"
+              "go": "70443ea2-2d15-4937-aef7-c94d5b4fa778"
             }
           }
         ]
