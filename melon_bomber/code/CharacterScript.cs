@@ -24,23 +24,27 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Property]public GameObject body;
 	[Property]public GameObject head;
 	private CharacterController characterCC;
-	private CitizenAnimationHelper animator;
-	private ModelRenderer model;
+	public CitizenAnimationHelper animator;
+	public SkinnedModelRenderer model;
 	private Vector3 wishVelocity;
 	[Property]public int placedBombs {get;set;} = 0;
 	protected override void OnAwake()
 	
 	{
+		if(IsProxy)
+		return;
 		base.OnAwake();
 		characterCC = GameObject.Components.Get<CharacterController>();
 		animator = GameObject.Components.Get<CitizenAnimationHelper>();
-		model = body.Components.Get<ModelRenderer>();
+		model = body.Components.Get<SkinnedModelRenderer>();
 		
 	}
 	protected override void OnStart()
 	{
+		if(IsProxy)
+		return;
 		base.OnStart();
-		if(body.Components.TryGet<SkinnedModelRenderer>(out var model))
+		if(model!=null)
 		{
 			var clothing = ClothingContainer.CreateFromLocalUser();
 			clothing.Apply(model);
@@ -122,7 +126,19 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	}
 
 	
-	public void OnCollisionStart(Collision other){}
-	public void OnCollisionStop(CollisionStop other){}
-	public void OnCollisionUpdate(Collision other){}
+	public void OnCollisionStart(Collision other)
+	{
+		if(IsProxy)
+		return;
+	}
+	public void OnCollisionStop(CollisionStop other)
+	{
+		if(IsProxy)
+		return;
+	}
+	public void OnCollisionUpdate(Collision other)
+	{
+		if(IsProxy)
+		return;
+	}
 }

@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "510df084-a2ea-4ab1-a9a3-15cbeb5b32bd",
+    "Id": "18ed96e2-c854-4c48-ae29-8dacc712f1f6",
     "Name": "playercontroller",
     "Tags": "player",
     "Networked": true,
@@ -21,7 +21,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "bc77d728-ea8e-4c8b-bb3d-d4bbc654e5b6"
+          "go": "adb13c5b-3ca2-4ed5-92ae-f80aa17cb647"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -34,7 +34,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "92992446-78dc-4f73-af34-ec1823e03499",
+          "go": "8acd4ef3-0df3-4812-837f-c21b45087415",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -42,11 +42,11 @@
         "__type": "CharacterScript",
         "body": {
           "_type": "gameobject",
-          "go": "92992446-78dc-4f73-af34-ec1823e03499"
+          "go": "8acd4ef3-0df3-4812-837f-c21b45087415"
         },
         "head": {
           "_type": "gameobject",
-          "go": "bc77d728-ea8e-4c8b-bb3d-d4bbc654e5b6"
+          "go": "adb13c5b-3ca2-4ed5-92ae-f80aa17cb647"
         },
         "bomblength": 50,
         "bombs": 1,
@@ -74,9 +74,10 @@
     ],
     "Children": [
       {
-        "Id": "92992446-78dc-4f73-af34-ec1823e03499",
+        "Id": "8acd4ef3-0df3-4812-837f-c21b45087415",
         "Name": "Body",
         "Rotation": "0,0,0.06540259,0.9978589",
+        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -94,9 +95,10 @@
         ]
       },
       {
-        "Id": "bc77d728-ea8e-4c8b-bb3d-d4bbc654e5b6",
+        "Id": "adb13c5b-3ca2-4ed5-92ae-f80aa17cb647",
         "Name": "Head",
         "Position": "61.70564,21.16069,-33.99077",
+        "Networked": true,
         "Enabled": true
       }
     ]
