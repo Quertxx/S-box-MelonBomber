@@ -94,6 +94,14 @@
             "Model": "models/citizen/citizen.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "PlayerDresser",
+            "playerBody": {
+              "_type": "component",
+              "go": "d37000de-3e13-4e50-9c90-1d907a14f5e5",
+              "component_type": "SkinnedModelRenderer"
+            }
           }
         ]
       },

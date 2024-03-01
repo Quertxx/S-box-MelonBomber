@@ -33,26 +33,29 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Property]public int placedBombs {get;set;} = 0;
 	protected override void OnAwake()
 	{
+
+		base.OnAwake();
+		characterCC = Components.GetInDescendantsOrSelf<CharacterController>();
+		//animator = GameObject.Components.Get<CitizenAnimationHelper>();
+		model = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
 		if(IsProxy)
 		return;
-		base.OnAwake();
-		characterCC = GameObject.Components.Get<CharacterController>();
-		//animator = GameObject.Components.Get<CitizenAnimationHelper>();
-		model = body.Components.Get<SkinnedModelRenderer>();
-		ANIMATORS.Add(animator);
+
 		
 	}
 	protected override void OnStart()
 	{
-		if(model!=null)
+		base.OnStart();
+		ANIMATORS.Add(animator);
+		/*if(model!=null)
 		{
 			var clothing = ClothingContainer.CreateFromLocalUser();
 			clothing.Apply(model);
 			
-		}
+		}*/
 		if(IsProxy)
 		return;
-		base.OnStart();
+
 
 		speed = defaultSpeed;
 		power = defaultPower;
@@ -97,6 +100,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 
 		protected override void OnFixedUpdate()
 	{
+		base.OnFixedUpdate();
 		/*if(animator != null)
 		{
 			animator.WithVelocity(characterCC.Velocity);
@@ -109,7 +113,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 			animator.WithVelocity(characterCC.Velocity);
 			animator.WithWishVelocity(wishVelocity);
 		}
-		base.OnFixedUpdate();
+		
 		if(IsProxy)
 		return;
 		wishVelocity = Vector3.Zero;
