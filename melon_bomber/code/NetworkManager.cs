@@ -3,10 +3,11 @@ using Sandbox.Network;
 
 public sealed class NetworkManager : Component
 {
-	[System.Obsolete]
+	/*
 	protected override async void OnStart()
 	{
 		base.OnStart();
+		
 		var list = await GameNetworkSystem.QueryLobbies();
 		if (list.ToArray().Length>0)
 		{
@@ -20,5 +21,5 @@ public sealed class NetworkManager : Component
 	protected override void OnUpdate()
 	{
 
-	}
+	}*/
 }

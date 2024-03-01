@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "18ed96e2-c854-4c48-ae29-8dacc712f1f6",
+    "Id": "768545eb-0bfd-4770-b87f-993a45d052d9",
     "Name": "playercontroller",
     "Tags": "player",
     "Networked": true,
@@ -21,7 +21,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "adb13c5b-3ca2-4ed5-92ae-f80aa17cb647"
+          "go": "7435ec0e-b22a-4ee5-aabb-460e3f657e35"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -34,7 +34,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "8acd4ef3-0df3-4812-837f-c21b45087415",
+          "go": "164570b8-2137-46b9-adc0-9474c7981379",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -42,11 +42,11 @@
         "__type": "CharacterScript",
         "body": {
           "_type": "gameobject",
-          "go": "8acd4ef3-0df3-4812-837f-c21b45087415"
+          "go": "164570b8-2137-46b9-adc0-9474c7981379"
         },
         "head": {
           "_type": "gameobject",
-          "go": "adb13c5b-3ca2-4ed5-92ae-f80aa17cb647"
+          "go": "7435ec0e-b22a-4ee5-aabb-460e3f657e35"
         },
         "bomblength": 50,
         "bombs": 1,
@@ -74,7 +74,7 @@
     ],
     "Children": [
       {
-        "Id": "8acd4ef3-0df3-4812-837f-c21b45087415",
+        "Id": "164570b8-2137-46b9-adc0-9474c7981379",
         "Name": "Body",
         "Rotation": "0,0,0.06540259,0.9978589",
         "Networked": true,
@@ -95,11 +95,33 @@
         ]
       },
       {
-        "Id": "adb13c5b-3ca2-4ed5-92ae-f80aa17cb647",
+        "Id": "7435ec0e-b22a-4ee5-aabb-460e3f657e35",
         "Name": "Head",
         "Position": "61.70564,21.16069,-33.99077",
         "Networked": true,
         "Enabled": true
+      },
+      {
+        "Id": "54c7292e-8f8a-4c13-af63-f4f92a9acad7",
+        "Name": "Screen",
+        "Position": "13.38118,71.47127,5.069",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ScreenPanel",
+            "AutoScreenScale": true,
+            "Opacity": 1,
+            "Scale": 1,
+            "ZIndex": 100
+          },
+          {
+            "__type": "PlayerHUD",
+            "player": {
+              "_type": "gameobject",
+              "go": "768545eb-0bfd-4770-b87f-993a45d052d9"
+            }
+          }
+        ]
       }
     ]
   },

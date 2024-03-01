@@ -1,0 +1,46 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+@if (playerScript is null)
+return;
+<root>
+	<div class ="stats">
+
+		<p>🏃‍♂️@playerScript.speed</p>
+		<p>🧨@playerScript.power</p>
+		<p>💣@playerScript.bombs</p>
+		
+
+	</div>
+</root>
+
+@code
+{
+
+	[Property]GameObject player {get;set;}
+	private CharacterScript playerScript;
+        //public CharacterScript playerScript {get;set;} = player.Components.Get<CharacterScript>();
+        /// <summary>
+        /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+        /// </summary>
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+			playerScript = player.Components.Get<CharacterScript>();
+        }
+        protected override int BuildHash()
+	{
+		if(playerScript!= null)
+		{
+			return System.HashCode.Combine(playerScript.speed, playerScript.power,playerScript.bombs);
+
+		}
+		else
+		{
+			return System.HashCode.Combine("");
+		}
+
+	}
+}	

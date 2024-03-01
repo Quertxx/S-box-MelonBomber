@@ -41,15 +41,16 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	}
 	protected override void OnStart()
 	{
-		if(IsProxy)
-		return;
-		base.OnStart();
 		if(model!=null)
 		{
 			var clothing = ClothingContainer.CreateFromLocalUser();
 			clothing.Apply(model);
 			
 		}
+		if(IsProxy)
+		return;
+		base.OnStart();
+
 		speed = defaultSpeed;
 		power = defaultPower;
 		bombs = defaultBombs;
@@ -59,6 +60,13 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	}
 	protected override void OnUpdate()
 	{
+		if(animator != null)
+		{
+			animator.WithVelocity(characterCC.Velocity);
+			animator.WithWishVelocity(wishVelocity);
+			//animator.WithLook(head.Transform.Rotation.Forward, 1f, 0.75f, 0.5f);
+			
+		}
 		if(IsProxy)
 		return;
 		if(characterCC.IsOnGround)
@@ -71,13 +79,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 			characterCC.ApplyFriction(5f);
 			characterCC.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
 		}
-				if(animator != null)
-		{
-			animator.WithVelocity(characterCC.Velocity);
-			animator.WithWishVelocity(wishVelocity);
-			//animator.WithLook(head.Transform.Rotation.Forward, 1f, 0.75f, 0.5f);
-			
-		}
+
 		
 		if(Input.Pressed("attack1"))
 		{

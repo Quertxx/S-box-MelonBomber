@@ -8,7 +8,7 @@ public sealed class MelonScript : Component
 {
 	public CharacterScript script;
 	private Capsule capsule;
-	[Property]private GameObject powerUp;
+	[Property]public GameObject powerUp;
 	public int bombLength;
 	
 	protected override async void OnStart()
@@ -81,6 +81,7 @@ public sealed class MelonScript : Component
 				if(hitresult.GameObject.Tags.Has("player"))
 				{
 					Log.Info("Dead");
+					
 					break;
 				}
 				if(hitresult.GameObject.Tags.Has("wall"))
@@ -89,11 +90,13 @@ public sealed class MelonScript : Component
 				}
 				if(hitresult.GameObject.Tags.Has("player"))
 				{
+					
 					Log.Info("Dead");
 				}
 			}
 			else if(hitResults[0].GameObject.Tags.Has("player"))
 			{
+				
 				Log.Info("Dead");
 			}
 			else
