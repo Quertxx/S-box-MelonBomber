@@ -1,0 +1,196 @@
+{
+  "Id": "537fdac7-0c67-4233-b995-edd124ee3240",
+  "GameObjects": [
+    {
+      "Id": "95e28538-f194-4a79-8e9e-cf096303ab8e",
+      "Name": "Screen",
+      "Position": "164.0372,154.0411,-198.3864",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenu",
+          "MyStringValue": "Hello World!"
+        }
+      ]
+    },
+    {
+      "Id": "e1466de3-8ece-424b-8ca4-d5969e472474",
+      "Name": "menuBackground",
+      "Position": "164.0372,154.0411,-198.3864",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "b034c3be-c25e-4c6f-981b-c271daf7529b",
+          "Name": "Cube",
+          "Position": "199.9628,0,-73.61356",
+          "Scale": "6.185402,6.231006,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "57d984a1-8769-41bc-ae74-ec871dee0f96",
+          "Name": "Cube",
+          "Position": "339.9628,0,34.38644",
+          "Scale": "0.5803071,6.231006,3.326857",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "2f7b25f8-0ac7-4234-87c6-3bf0e89e2d49",
+          "Name": "Cube",
+          "Position": "235.9628,145.9589,34.38644",
+          "Scale": "4.712521,0.4327311,3.326857",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "7373ae24-c159-4a17-bed0-4122a599b980",
+          "Name": "Cube",
+          "Position": "235.9628,-146.0411,34.38644",
+          "Scale": "4.712521,0.4327311,3.326857",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "6384a373-f8c5-42d0-8095-5fa09b781dd4",
+          "Name": "Man",
+          "Position": "100.2151,-21.28827,-48.5732",
+          "Rotation": "0,0,-0.9999021,0.01399515",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "AnimationGraph": null,
+              "BodyGroups": 341,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "MenuDresser"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "d2f38aea-8275-4692-88f2-536e6a107156",
+      "Name": "Camera",
+      "Position": "164.0372,154.0411,-198.3864",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "Id": "caeeda32-3fda-45e2-9fc4-7013941dc515",
+      "Name": "Sun",
+      "Position": "78.3723,180,-32.27666",
+      "Rotation": "0,0.3557085,0,0.934597",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "mainmenu",
+  "Description": "",
+  "LastSaved": "2024-03-02T19:53:50.2831243\u002B00:00",
+  "__references": []
+}

@@ -18,8 +18,8 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Property]public GameObject Melon{get;set;}
 	private int defaultPower {get;set;} = 1;
 	[Category("Stats")]
-	[Property] public int bomblength {get;set;} = 50;
-	private int bomblengthDefault {get;set;} = 50;
+	[Property] public int bomblength {get;set;} = 64;
+	private int bomblengthDefault {get;set;} = 64;
 	[Category("Body")]
 	[Property]public GameObject body;
 	[Property]public GameObject head;

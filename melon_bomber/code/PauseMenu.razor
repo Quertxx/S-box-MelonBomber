@@ -3,17 +3,31 @@
 @inherits PanelComponent
 
 <root class="@(isPaused ? "" : "hide")">
+	@if (IsProxy)
+	return;
 	<h2 class="Title">Paused Game</h2>
-	<div class = "options">
+	<div class =@(isPowerups ? "powerups" : "options")>
 		<div class ="button" onclick=@onResume>
 			Resume
 		</div>
-		<div class ="button">
+		<div class ="button" onclick=@gotoPowerups>
 			Powerups
 		</div>
 		<div class ="button" onclick=@onExit>
 			Exit
 		</div>
+	</div>
+	<div class=@(isPowerups ? "noPowerups" : "powerups")>
+		<div class ="options">
+			<div class ="text">
+				<p>🏃‍♂️ This will make you run faster</p>
+				<p>💥 This will make your bombs explode in a bigger area</p>
+				<p>💣 This will allow you to place more bombs</p>
+			</div>
+			<div class="button" onclick=@gotoPowerups>
+				Return
+			</div>
+		</div>	
 	</div>
 </root>
 
@@ -21,6 +35,7 @@
 {
 
 	public bool isPaused {get;set;} = false;
+	public bool isPowerups {get;set;} = false;
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
@@ -32,6 +47,11 @@
 			isPaused = !isPaused;
 			Log.Info(isPaused);
 		}
+		if(Input.Pressed("Menu"))
+		{
+			isPowerups = !isPowerups;
+			Log.Info(isPowerups);
+		}
 	}
 	public void onResume()
 	{
@@ -42,8 +62,12 @@
 		//Change this later
 		Game.Close();
 	}
+	public void gotoPowerups()
+	{
+		isPowerups = !isPowerups;
+	}
 	protected override int BuildHash()
 	{
-		return System.HashCode.Combine(isPaused);
+		return System.HashCode.Combine(isPaused, isPowerups);
 	}
 }

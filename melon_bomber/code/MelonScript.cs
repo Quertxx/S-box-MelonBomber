@@ -87,6 +87,7 @@ public sealed class MelonScript : Component
 				if(hitresult.GameObject.Tags.Has("wall"))
 				{
 					destroyNetworkobjects(hitresult);
+					break;
 				}
 				if(hitresult.GameObject.Tags.Has("player"))
 				{

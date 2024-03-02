@@ -51,7 +51,7 @@ public sealed class PowerUP : Component, Component.ITriggerListener
 					break;
 					case Powerup.power:
 					script.power++;
-					script.bomblength = script.bomblength + 50;
+					script.bomblength = script.bomblength + 32;
 					break;
 					case Powerup.bomb:
 					script.bombs++;

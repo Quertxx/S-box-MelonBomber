@@ -1,0 +1,1540 @@
+{
+  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "GameObjects": [
+    {
+      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "Name": "Plane",
+      "Position": "48,0,0",
+      "Scale": "6.907975,9.150126,5",
+      "Networked": true,
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "a09cc88e-c9ed-4565-a12f-9e87dea017ad",
+      "Name": "NetworkHelper",
+      "Position": "-29.08226,-74.59674,180.0356",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkHelper",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "code/playercontroller.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "18c76549-2e03-4ade-8bc5-238771f008f3"
+            },
+            {
+              "_type": "gameobject",
+              "go": "17a46f5d-ee64-4bb1-a63c-787a0de2eac4"
+            },
+            {
+              "_type": "gameobject",
+              "go": "3e59bc79-bf1e-4ad8-bccc-cafc8955aab4"
+            },
+            {
+              "_type": "gameobject",
+              "go": "c3e23c30-209b-44cc-bdb6-810fc3cf1eed"
+            }
+          ],
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "Id": "18c76549-2e03-4ade-8bc5-238771f008f3",
+      "Name": "spawnPoint",
+      "Position": "-224,412,0.000002906712",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "17a46f5d-ee64-4bb1-a63c-787a0de2eac4",
+      "Name": "spawnPoint (1)",
+      "Position": "-220,-416,0.000002906712",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "3e59bc79-bf1e-4ad8-bccc-cafc8955aab4",
+      "Name": "spawnPoint (2)",
+      "Position": "352,-408,0.00001105491",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "c3e23c30-209b-44cc-bdb6-810fc3cf1eed",
+      "Name": "spawnPoint (3)",
+      "Position": "348,412,0.00001103198",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "15139ecb-58d4-46fd-9b9a-8cf736a7e82f",
+      "Name": "Camera",
+      "Position": "-67.85812,-33.23303,398.1443",
+      "Rotation": "0,0.7071068,0,0.7071068",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 16,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "Id": "f4cedd57-0206-4ff2-a02b-12a5fc1f033f",
+      "Name": "Outerwalls",
+      "Position": "0,0,32",
+      "Networked": true,
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "605a71ba-0b2c-4163-b727-ad3d7fc19a7a",
+          "Name": "cube_2",
+          "Position": "-288,32,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0b17cfd6-1b0a-4e52-bbcc-2eb5696f7132",
+          "Name": "cube_2 (4)",
+          "Position": "-288,-32,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "24e7102f-19eb-4c82-8706-82a950ef295c",
+          "Name": "cube_2 (5)",
+          "Position": "-288,-96,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "64b206f0-0968-4253-88a1-26f71dc081b4",
+          "Name": "cube_2 (6)",
+          "Position": "-288,-160,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "736876c4-42a8-403b-84ce-4ce599497638",
+          "Name": "cube_2 (7)",
+          "Position": "-288,-224,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a8d11912-34fa-4a0f-9d03-c91a9a9cab0f",
+          "Name": "cube_2 (8)",
+          "Position": "-288,-288,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "af747c2d-2731-40e9-b1b7-c472204716ca",
+          "Name": "cube_2 (12)",
+          "Position": "-288,-352,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2068de18-2ca4-47b4-881c-f30b7ed2cf8e",
+          "Name": "cube_2 (13)",
+          "Position": "-288,-416,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "53833db2-699f-435d-bbda-328ff163bbc1",
+          "Name": "cube_2 (15)",
+          "Position": "-288,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "7d23a0a2-2a16-4735-b45f-87a7b8904295",
+          "Name": "cube_2 (1)",
+          "Position": "-288,96,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "25fe04dd-ebe3-4564-b698-5c4dd7956c4b",
+          "Name": "cube_2 (2)",
+          "Position": "-288,160,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "42c06a62-840d-436b-9ea8-876f2d47411e",
+          "Name": "cube_2 (3)",
+          "Position": "-288,224,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d83bb4df-60ac-4d2d-96bc-bdb6bdd80964",
+          "Name": "cube_2 (9)",
+          "Position": "-288,288,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "223802c4-042d-4d6f-a0e7-7a9f012893b9",
+          "Name": "cube_2 (10)",
+          "Position": "-288,352,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "dabeb57f-4252-4cd3-a4c2-81316c5e1f16",
+          "Name": "cube_2 (11)",
+          "Position": "-288,416,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6b64fd05-2299-4bbc-aa92-2a69feab58f8",
+          "Name": "cube_2 (41)",
+          "Position": "416,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "321af5b1-89c0-44bf-914b-b03ec1856032",
+          "Name": "cube_2 (40)",
+          "Position": "416,-416,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9aa62133-82da-4c7e-97ef-5b0143000e88",
+          "Name": "cube_2 (39)",
+          "Position": "416,-352,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d7e2bc0f-1759-4baa-99a2-a2ba185e0afb",
+          "Name": "cube_2 (38)",
+          "Position": "416,-288,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "90e0ab88-c2a3-442c-9901-c0d0bb88c778",
+          "Name": "cube_2 (37)",
+          "Position": "416,-224,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "e775efb2-ef30-4aa6-93e7-1bb2dedd1c96",
+          "Name": "cube_2 (36)",
+          "Position": "416,-160,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "59dbd871-9393-4602-bf72-3fb898d04389",
+          "Name": "cube_2 (35)",
+          "Position": "416,-96,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5db11818-c10d-4a28-811e-27173718917f",
+          "Name": "cube_2 (34)",
+          "Position": "416,-32,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3d3a3c3d-712b-4416-b4ed-c76fa3b448fd",
+          "Name": "cube_2 (33)",
+          "Position": "416,32,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "010ba570-7dc7-467c-8c64-0120795feccb",
+          "Name": "cube_2 (32)",
+          "Position": "416,96,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9d2b9b80-34d5-4e22-8bf7-423ce7df5bca",
+          "Name": "cube_2 (31)",
+          "Position": "416,160,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "be026c23-5ffd-4b72-bea9-e97b7ddbfd78",
+          "Name": "cube_2 (30)",
+          "Position": "416,224,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2ff10f2d-1fd0-41e6-acb2-83e88783024d",
+          "Name": "cube_2 (29)",
+          "Position": "416,288,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f833ee6b-2c3c-4a75-bb1d-d7a369223945",
+          "Name": "cube_2 (28)",
+          "Position": "416,352,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c2e3c70c-4e7d-4ff4-8baa-9567cec413bf",
+          "Name": "cube_2 (27)",
+          "Position": "416,416,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "8a394924-7e70-478b-86a3-e13c34fb23b3",
+          "Name": "cube_2 (14)",
+          "Position": "-288,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b4c42eda-e0c7-4304-a073-da72b2f03a7c",
+          "Name": "cube_2 (16)",
+          "Position": "-224,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "e69aef83-ee6c-4ab1-82fe-5775f6397ed3",
+          "Name": "cube_2 (17)",
+          "Position": "-160,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f3a7e4d0-33ad-4f22-875c-9b89329231f2",
+          "Name": "cube_2 (18)",
+          "Position": "-96,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4569c8a4-b60f-4773-90e6-3c5005421135",
+          "Name": "cube_2 (19)",
+          "Position": "-32,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "33101c90-5095-47bd-a8d9-8e6f6d73bee4",
+          "Name": "cube_2 (20)",
+          "Position": "32,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4df3bd83-e286-4a26-955e-9ac273f1a5bb",
+          "Name": "cube_2 (21)",
+          "Position": "96,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "be181286-2b92-4e24-b777-b9db6ecc98e5",
+          "Name": "cube_2 (22)",
+          "Position": "160,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "7a4917ac-16e7-40e2-9c94-ccb74fd0cfdc",
+          "Name": "cube_2 (23)",
+          "Position": "224,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9af2e182-1fd5-48f5-8161-1b8a53ae32eb",
+          "Name": "cube_2 (24)",
+          "Position": "288,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "68c3a7b8-fc32-4790-a4ab-f11a5f1d75ce",
+          "Name": "cube_2 (25)",
+          "Position": "352,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "224a1f53-7190-4fa2-8935-49c72e81453e",
+          "Name": "cube_2 (51)",
+          "Position": "-224,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "df910b1b-ad04-4cde-b793-23128d3775c0",
+          "Name": "cube_2 (50)",
+          "Position": "-160,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9112ab89-ba21-4cbd-aba4-3440c6edbe52",
+          "Name": "cube_2 (49)",
+          "Position": "-96,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9a31ddc1-4e27-4ec2-9a4f-113921a65333",
+          "Name": "cube_2 (48)",
+          "Position": "-32,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2892f873-7e4d-4523-ae3d-c41f0ea9c165",
+          "Name": "cube_2 (47)",
+          "Position": "32,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b8a0c65f-5e7b-4fcb-87e6-01847b8fe3a1",
+          "Name": "cube_2 (46)",
+          "Position": "96,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a066a389-2ffa-4b4a-ae01-30e90fc16370",
+          "Name": "cube_2 (45)",
+          "Position": "160,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ed82b922-e23e-4261-bfec-117b5a0f7584",
+          "Name": "cube_2 (44)",
+          "Position": "224,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d0434a0a-260a-4663-bbb7-37c4566a4d1d",
+          "Name": "cube_2 (43)",
+          "Position": "288,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "e582959c-51ae-4d59-98c6-0d6e53821e27",
+          "Name": "cube_2 (42)",
+          "Position": "352,-480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "dc0d8c38-d33a-4f88-b02c-91445ceb59cc",
+          "Name": "cube_2 (26)",
+          "Position": "416,480,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/default/white.vmat",
+              "Model": "models/cube_2.vmdl",
+              "RenderType": "On",
+              "Tint": "0.1907,0.1907,0.1907,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,64,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "56c82d1d-97ab-489b-ae0b-8778638384a2",
+      "Name": "Innerwalls",
+      "Position": "0,0,32",
+      "Networked": true,
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "c3548dd4-f13c-4b08-abbe-dbf02ed8799a",
+          "Name": "Non-destructible Walls",
+          "Position": "0,0,0",
+          "Networked": true,
+          "Enabled": true
+        },
+        {
+          "Id": "7f760d4a-efa8-4813-bfd6-d0ef9476857c",
+          "Name": "DestructibleWalls",
+          "Position": "0,0,0",
+          "Networked": true,
+          "Enabled": true
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-03-02T19:40:24.6340419\u002B00:00",
+  "__references": []
+}
