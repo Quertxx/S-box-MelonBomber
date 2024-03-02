@@ -11,7 +11,7 @@
 		<div class ="button">
 			Powerups
 		</div>
-		<div class ="button">
+		<div class ="button" onclick=@onExit>
 			Exit
 		</div>
 	</div>
@@ -20,7 +20,6 @@
 @code
 {
 
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	public bool isPaused {get;set;} = false;
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt

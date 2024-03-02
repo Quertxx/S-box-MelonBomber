@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "2d99491a-135a-4f88-b6ae-3ac3978fbb38",
+    "Id": "9b002126-9ebd-4b07-bc08-75c358b81230",
     "Name": "playercontroller",
     "Tags": "player",
     "Enabled": true,
@@ -20,7 +20,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "497bb9d5-c9b4-4fd7-9de6-def72b32f716"
+          "go": "d2c8a957-7077-4223-9bd3-9faa6bd497a5"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -33,7 +33,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "cd040deb-2b9b-4f89-b47c-9575f358e432",
+          "go": "17aad952-e70a-4607-9cda-9c63162952c1",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -41,15 +41,15 @@
         "__type": "CharacterScript",
         "body": {
           "_type": "gameobject",
-          "go": "cd040deb-2b9b-4f89-b47c-9575f358e432"
+          "go": "17aad952-e70a-4607-9cda-9c63162952c1"
         },
         "head": {
           "_type": "gameobject",
-          "go": "497bb9d5-c9b4-4fd7-9de6-def72b32f716"
+          "go": "d2c8a957-7077-4223-9bd3-9faa6bd497a5"
         },
         "animator": {
           "_type": "component",
-          "go": "2d99491a-135a-4f88-b6ae-3ac3978fbb38",
+          "go": "9b002126-9ebd-4b07-bc08-75c358b81230",
           "component_type": "CitizenAnimationHelper"
         },
         "bomblength": 50,
@@ -61,7 +61,7 @@
         },
         "pauseMenu": {
           "_type": "gameobject",
-          "go": "ca405088-d2d0-4b5f-af40-a96541627ae7"
+          "go": "29b2ff9d-5114-4ba1-b448-f657292e6b53"
         },
         "placedBombs": 0,
         "power": 1,
@@ -82,7 +82,7 @@
     ],
     "Children": [
       {
-        "Id": "cd040deb-2b9b-4f89-b47c-9575f358e432",
+        "Id": "17aad952-e70a-4607-9cda-9c63162952c1",
         "Name": "Body",
         "Rotation": "0,0,0.06540259,0.9978589",
         "Tags": "body",
@@ -104,20 +104,20 @@
             "__type": "PlayerDresser",
             "playerBody": {
               "_type": "component",
-              "go": "cd040deb-2b9b-4f89-b47c-9575f358e432",
+              "go": "17aad952-e70a-4607-9cda-9c63162952c1",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "497bb9d5-c9b4-4fd7-9de6-def72b32f716",
+        "Id": "d2c8a957-7077-4223-9bd3-9faa6bd497a5",
         "Name": "Head",
         "Position": "61.70564,21.16069,-33.99077",
         "Enabled": true
       },
       {
-        "Id": "471ea256-7cde-41d8-a5dc-3da96d584419",
+        "Id": "87042723-69a9-4c5a-8683-a83886275bcb",
         "Name": "faceCamera",
         "Position": "36.02481,0,62.3672",
         "Rotation": "0,0,1,-0.00000004371139",
@@ -142,13 +142,13 @@
         ]
       },
       {
-        "Id": "38275811-2551-498b-bb4e-8e97a7e51708",
+        "Id": "0aa0ab78-ce36-4606-92fe-f48c33e6f805",
         "Name": "UI",
         "Position": "-170.7177,151.9054,49.27681",
         "Enabled": true,
         "Children": [
           {
-            "Id": "8c57fbca-9fba-46cc-88c7-9b90ceb41716",
+            "Id": "9b29227b-2485-40cc-84ea-5f768bf4f1b0",
             "Name": "HUD",
             "Position": "184.0988,-80.43413,-44.20781",
             "Enabled": true,
@@ -165,13 +165,13 @@
                 "backgroundColor": "0.54419,0,0,0.8",
                 "player": {
                   "_type": "gameobject",
-                  "go": "2d99491a-135a-4f88-b6ae-3ac3978fbb38"
+                  "go": "9b002126-9ebd-4b07-bc08-75c358b81230"
                 }
               }
             ]
           },
           {
-            "Id": "ca405088-d2d0-4b5f-af40-a96541627ae7",
+            "Id": "29b2ff9d-5114-4ba1-b448-f657292e6b53",
             "Name": "PauseMenu",
             "Position": "0,0,0",
             "Enabled": true,
@@ -184,8 +184,7 @@
                 "ZIndex": 50
               },
               {
-                "__type": "PauseMenu",
-                "MyStringValue": ""
+                "__type": "PauseMenu"
               }
             ]
           }
