@@ -2,25 +2,33 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 
+<root>
 @if (playerScript is null)
-return;
+return;	
 @if (IsProxy)
 return;
-<root>
-	<div class ="stats">
+
+	<div class ="background", style="background-color: @backgroundColor.Rgba">
+		<div class ="stats">
 
 		<p>🏃‍♂️@playerScript.speed</p>
 		<p>🧨@playerScript.power</p>
 		<p>💣@playerScript.bombs</p>
+		</div>
 		
-
 	</div>
+
+
+
+
 </root>
 
 @code
 {
 
 	[Property]GameObject player {get;set;}
+	[Property]public Color backgroundColor{get;set;}
+	//private Image faceImage;
 	private CharacterScript playerScript;
         //public CharacterScript playerScript {get;set;} = player.Components.Get<CharacterScript>();
         /// <summary>
@@ -31,6 +39,10 @@ return;
         {
             base.OnStart();
 			playerScript = player.Components.Get<CharacterScript>();
+        }
+        protected override void OnFixedUpdate()
+        {
+            base.OnFixedUpdate();
         }
         protected override int BuildHash()
 	{

@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "70443ea2-2d15-4937-aef7-c94d5b4fa778",
+    "Id": "2d99491a-135a-4f88-b6ae-3ac3978fbb38",
     "Name": "playercontroller",
     "Tags": "player",
     "Enabled": true,
@@ -20,7 +20,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "c053145a-c6d8-4492-8656-debe4bb67b3f"
+          "go": "497bb9d5-c9b4-4fd7-9de6-def72b32f716"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -33,7 +33,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "d37000de-3e13-4e50-9c90-1d907a14f5e5",
+          "go": "cd040deb-2b9b-4f89-b47c-9575f358e432",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -41,15 +41,15 @@
         "__type": "CharacterScript",
         "body": {
           "_type": "gameobject",
-          "go": "d37000de-3e13-4e50-9c90-1d907a14f5e5"
+          "go": "cd040deb-2b9b-4f89-b47c-9575f358e432"
         },
         "head": {
           "_type": "gameobject",
-          "go": "c053145a-c6d8-4492-8656-debe4bb67b3f"
+          "go": "497bb9d5-c9b4-4fd7-9de6-def72b32f716"
         },
         "animator": {
           "_type": "component",
-          "go": "70443ea2-2d15-4937-aef7-c94d5b4fa778",
+          "go": "2d99491a-135a-4f88-b6ae-3ac3978fbb38",
           "component_type": "CitizenAnimationHelper"
         },
         "bomblength": 50,
@@ -78,7 +78,7 @@
     ],
     "Children": [
       {
-        "Id": "d37000de-3e13-4e50-9c90-1d907a14f5e5",
+        "Id": "cd040deb-2b9b-4f89-b47c-9575f358e432",
         "Name": "Body",
         "Rotation": "0,0,0.06540259,0.9978589",
         "Enabled": true,
@@ -99,20 +99,20 @@
             "__type": "PlayerDresser",
             "playerBody": {
               "_type": "component",
-              "go": "d37000de-3e13-4e50-9c90-1d907a14f5e5",
+              "go": "cd040deb-2b9b-4f89-b47c-9575f358e432",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "c053145a-c6d8-4492-8656-debe4bb67b3f",
+        "Id": "497bb9d5-c9b4-4fd7-9de6-def72b32f716",
         "Name": "Head",
         "Position": "61.70564,21.16069,-33.99077",
         "Enabled": true
       },
       {
-        "Id": "5ffa63a4-f71b-41c5-9d39-2ae05d44b464",
+        "Id": "8c57fbca-9fba-46cc-88c7-9b90ceb41716",
         "Name": "Screen",
         "Position": "13.38118,71.47127,5.069",
         "Enabled": true,
@@ -126,10 +126,41 @@
           },
           {
             "__type": "PlayerHUD",
+            "camera": {
+              "_type": "component",
+              "go": "471ea256-7cde-41d8-a5dc-3da96d584419",
+              "component_type": "CameraComponent"
+            },
+            "faceTexture": "models/sbox_props/concrete_barrier/concrete_barrier_normal_tga_1c479039.generated.vtex",
             "player": {
               "_type": "gameobject",
-              "go": "70443ea2-2d15-4937-aef7-c94d5b4fa778"
+              "go": "2d99491a-135a-4f88-b6ae-3ac3978fbb38"
             }
+          }
+        ]
+      },
+      {
+        "Id": "471ea256-7cde-41d8-a5dc-3da96d584419",
+        "Name": "Camera",
+        "Position": "36.02481,0.000001725556,62.3672",
+        "Rotation": "0,0,1,-0.00000004371139",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 60,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
           }
         ]
       }
@@ -138,5 +169,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "facepunch.concrete_barrier"
+  ]
 }

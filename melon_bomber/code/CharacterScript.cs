@@ -47,12 +47,6 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	{
 		base.OnStart();
 		ANIMATORS.Add(animator);
-		/*if(model!=null)
-		{
-			var clothing = ClothingContainer.CreateFromLocalUser();
-			clothing.Apply(model);
-			
-		}*/
 		if(IsProxy)
 		return;
 
