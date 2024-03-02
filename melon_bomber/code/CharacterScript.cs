@@ -25,6 +25,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 	[Property]public GameObject head;
 	public CharacterController characterCC {get; private set;}
 	[Property]public CitizenAnimationHelper animator{get;set;}
+	[Property]public GameObject pauseMenu{get;set;}
 	public List<CitizenAnimationHelper> ANIMATORS {get; private set;} = new();
 	public SkinnedModelRenderer model;
 	private Vector3 wishVelocity;
@@ -89,6 +90,7 @@ public sealed class CharacterScript : Component, Component.ICollisionListener
 			}
 
 		}
+
 		
 	}
 

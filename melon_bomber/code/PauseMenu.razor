@@ -1,0 +1,50 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class="@(isPaused ? "" : "hide")">
+	<h2 class="Title">Paused Game</h2>
+	<div class = "options">
+		<div class ="button" onclick=@onResume>
+			Resume
+		</div>
+		<div class ="button">
+			Powerups
+		</div>
+		<div class ="button">
+			Exit
+		</div>
+	</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	public bool isPaused {get;set;} = false;
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+
+	protected override void OnUpdate()
+	{
+		if(Input.EscapePressed)
+		{
+			isPaused = !isPaused;
+			Log.Info(isPaused);
+		}
+	}
+	public void onResume()
+	{
+		isPaused = !isPaused;
+	}
+	public void onExit()
+	{
+		//Change this later
+		Game.Close();
+	}
+	protected override int BuildHash()
+	{
+		return System.HashCode.Combine(isPaused);
+	}
+}

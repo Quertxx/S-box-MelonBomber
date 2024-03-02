@@ -59,6 +59,10 @@
           "_type": "gameobject",
           "prefab": "code/melonbomb.prefab"
         },
+        "pauseMenu": {
+          "_type": "gameobject",
+          "go": "ca405088-d2d0-4b5f-af40-a96541627ae7"
+        },
         "placedBombs": 0,
         "power": 1,
         "speed": 200
@@ -81,6 +85,7 @@
         "Id": "cd040deb-2b9b-4f89-b47c-9575f358e432",
         "Name": "Body",
         "Rotation": "0,0,0.06540259,0.9978589",
+        "Tags": "body",
         "Enabled": true,
         "Components": [
           {
@@ -112,37 +117,9 @@
         "Enabled": true
       },
       {
-        "Id": "8c57fbca-9fba-46cc-88c7-9b90ceb41716",
-        "Name": "Screen",
-        "Position": "13.38118,71.47127,5.069",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "ScreenPanel",
-            "AutoScreenScale": true,
-            "Opacity": 1,
-            "Scale": 1,
-            "ZIndex": 100
-          },
-          {
-            "__type": "PlayerHUD",
-            "camera": {
-              "_type": "component",
-              "go": "471ea256-7cde-41d8-a5dc-3da96d584419",
-              "component_type": "CameraComponent"
-            },
-            "faceTexture": "models/sbox_props/concrete_barrier/concrete_barrier_normal_tga_1c479039.generated.vtex",
-            "player": {
-              "_type": "gameobject",
-              "go": "2d99491a-135a-4f88-b6ae-3ac3978fbb38"
-            }
-          }
-        ]
-      },
-      {
         "Id": "471ea256-7cde-41d8-a5dc-3da96d584419",
-        "Name": "Camera",
-        "Position": "36.02481,0.000001725556,62.3672",
+        "Name": "faceCamera",
+        "Position": "36.02481,0,62.3672",
         "Rotation": "0,0,1,-0.00000004371139",
         "Enabled": true,
         "Components": [
@@ -158,9 +135,59 @@
             "RenderExcludeTags": "",
             "RenderTags": "",
             "TargetEye": "None",
-            "Viewport": "0,0,1,1",
+            "Viewport": "0,0,0.1,1",
             "ZFar": 10000,
             "ZNear": 10
+          }
+        ]
+      },
+      {
+        "Id": "38275811-2551-498b-bb4e-8e97a7e51708",
+        "Name": "UI",
+        "Position": "-170.7177,151.9054,49.27681",
+        "Enabled": true,
+        "Children": [
+          {
+            "Id": "8c57fbca-9fba-46cc-88c7-9b90ceb41716",
+            "Name": "HUD",
+            "Position": "184.0988,-80.43413,-44.20781",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "ScreenPanel",
+                "AutoScreenScale": true,
+                "Opacity": 1,
+                "Scale": 1,
+                "ZIndex": 100
+              },
+              {
+                "__type": "PlayerHUD",
+                "backgroundColor": "0.54419,0,0,0.8",
+                "player": {
+                  "_type": "gameobject",
+                  "go": "2d99491a-135a-4f88-b6ae-3ac3978fbb38"
+                }
+              }
+            ]
+          },
+          {
+            "Id": "ca405088-d2d0-4b5f-af40-a96541627ae7",
+            "Name": "PauseMenu",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "ScreenPanel",
+                "AutoScreenScale": true,
+                "Opacity": 1,
+                "Scale": 1,
+                "ZIndex": 50
+              },
+              {
+                "__type": "PauseMenu",
+                "MyStringValue": ""
+              }
+            ]
           }
         ]
       }
@@ -169,7 +196,5 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.concrete_barrier"
-  ]
+  "__references": []
 }
